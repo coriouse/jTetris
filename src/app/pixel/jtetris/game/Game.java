@@ -1,14 +1,13 @@
 package app.pixel.jtetris.game;
 
 
-import java.awt.Color;
-
 import app.pixel.jtetris.arena.Arena;
 import app.pixel.jtetris.graphic.Render;
 import app.pixel.jtetris.object.BlocksManager;
-import app.pixel.jtetris.object.Brick;
+import app.pixel.jtetris.object.Bottom;
 import app.pixel.jtetris.object.JBlock;
-import app.pixel.jtetris.object.Piece;
+import app.pixel.jtetris.object.WallLeft;
+import app.pixel.jtetris.object.WallRight;
 
 /**
  * Game handler
@@ -19,29 +18,14 @@ import app.pixel.jtetris.object.Piece;
 public class Game {
 
 	public static void main(String[] args) {
+		
 		Render.init();
-		Arena.currentArena = new Arena();
-		
-		Arena.currentArena.addSprite(new Brick(0,140, Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(20,140, Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(40,140,Color.RED, Piece.HYPE));
-		
-		Arena.currentArena.addSprite(new Brick(60,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(80,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(100,140,Color.RED, Piece.HYPE));
-		
-		Arena.currentArena.addSprite(new Brick(120,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(140,140,Color.RED, Piece.HYPE));
-//		Arena.currentArena.addSprite(new Brick(160,140,Color.RED, Piece.HYPE));
-		
-		Arena.currentArena.addSprite(new Brick(180,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(200,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new Brick(220,140,Color.RED, Piece.HYPE));
-		Arena.currentArena.addSprite(new BlocksManager(0, 0));
-		
-		Arena.currentArena.addSprite(new JBlock(0,0));
-				
-		
+		Arena.currentArena = new Arena();		
+		Arena.currentArena.addSprite(new Bottom(0, 160, 220, 20));
+		Arena.currentArena.addSprite(new WallLeft(-120, 30, 20, 280));
+		Arena.currentArena.addSprite(new WallRight(120, 30, 20, 280));
+		Arena.currentArena.addSprite(new BlocksManager(0, 0));		
+		Arena.currentArena.addSprite(new JBlock(0,0));			
 
 	}
 
